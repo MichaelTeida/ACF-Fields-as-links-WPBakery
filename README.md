@@ -1,6 +1,6 @@
 Prosta wtyczka zrobiona dla własnych potrzeb. Brakowało mi takiej funkcjonalnosci w WPBakery i ACF PRO.
 
-# ACF Fields as links WPBakery
+# ACF Fields as links WPBakery [PL]
 
 ACF-Fields-as-links-WPBakery to wtyczka dla WPBakery umożliwiająca wyświetlanie pól ACF w elementach WPBakery.
 
@@ -20,7 +20,7 @@ ACF-Fields-as-links-WPBakery to wtyczka dla WPBakery umożliwiająca wyświetlan
 
 ---
 
-# ACF Fields as links WPBakery
+# ACF Fields as links WPBakery [ENG]
 
 ACF-Fields-as-links-WPBakery is a WPBakery plugin that allows you to display ACF fields within WPBakery elements.
 
