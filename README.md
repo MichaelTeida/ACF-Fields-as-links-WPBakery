@@ -2,7 +2,7 @@ Wtyczka zrobiona dla własnych potrzeb. Brakowało mi takiej funkcjonalnosci w W
 
 # ACF Fields as links WPBakery
 
-ACF-Fields-as-links-WPBakery to wtyczka dla WPBakery umożliwiająca wyświetlanie pól ACF PRO w elementach WPBakery.
+ACF-Fields-as-links-WPBakery to wtyczka dla WPBakery umożliwiająca wyświetlanie pól ACF w elementach WPBakery.
 
 ## Instalacja
 
@@ -22,7 +22,7 @@ ACF-Fields-as-links-WPBakery to wtyczka dla WPBakery umożliwiająca wyświetlan
 
 # ACF Fields as links WPBakery
 
-ACF-Fields-as-links-WPBakery is a WPBakery plugin that allows you to display ACF PRO fields within WPBakery elements.
+ACF-Fields-as-links-WPBakery is a WPBakery plugin that allows you to display ACF fields within WPBakery elements.
 
 ## Installation
 
