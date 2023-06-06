@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: ACF-Fields-as-links-WPBakery
-Description: Custom WPBakery elements for displaying ACF PRO fields
-Version: 1.2
+Description: Custom WPBakery elements for displaying ACF fields
+Version: 1.3
 Author: Michał Głuch
 */
 
@@ -38,6 +38,12 @@ function load_custom_acf_elements() {
           'param_name' => 'text_size',
           'description' => 'Enter the text size for the field value (e.g., "16px", "1rem")',
         ),
+        array(
+          'type' => 'textfield',
+          'heading' => 'CSS Class',
+          'param_name' => 'css_class',
+          'description' => 'Enter a CSS class to be added to the element',
+        ),
       ),
     )
   );
@@ -45,7 +51,6 @@ function load_custom_acf_elements() {
 
 add_action('vc_before_init', 'load_custom_acf_elements');
 
-// Render the output of the element
 function render_acf_field_display_element($atts) {
   extract(
     shortcode_atts(
@@ -53,6 +58,7 @@ function render_acf_field_display_element($atts) {
         'acf_field' => '',
         'prefix' => '',
         'text_size' => '16px',
+        'css_class' => '',
       ),
       $atts
     )
@@ -72,6 +78,10 @@ function render_acf_field_display_element($atts) {
       $output = '<a href="' . $prefix . $field_value . '"';
     } else {
       $output = '<span';
+    }
+
+    if ($css_class) {
+      $output .= ' class="' . $css_class . '"';
     }
 
     $output .= ' style="font-size:' . $text_size . ';">' . $field_value;
