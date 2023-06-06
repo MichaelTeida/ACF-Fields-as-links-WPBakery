@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: ACF-Fields-as-links-ACF-WPBakery
+Plugin Name: ACF-Fields-as-links-WPBakery
 Description: Custom WPBakery elements for displaying ACF PRO fields
-Version: 1.0
+Version: 1.1
 Author: Michał Głuch
 */
 
@@ -26,6 +26,12 @@ function load_custom_acf_elements() {
           'param_name' => 'acf_field',
           'description' => 'Enter the ACF field name inside double curly braces, e.g., {{field_name}}',
         ),
+        array(
+          'type' => 'textfield',
+          'heading' => 'Prefix',
+          'param_name' => 'prefix',
+          'description' => 'Enter a prefix to be added before the field value (e.g., "https://", "tel:")',
+        ),
       ),
     )
   );
@@ -39,6 +45,7 @@ function render_acf_field_display_element($atts) {
     shortcode_atts(
       array(
         'acf_field' => '',
+        'prefix' => '',
       ),
       $atts
     )
@@ -53,7 +60,14 @@ function render_acf_field_display_element($atts) {
   }
 
   if ($field_value) {
-    return $field_value;
+    $output = '';
+    if ($prefix && $acf_field) {
+      $output = $prefix . $field_value;
+    } else {
+      $output = $field_value;
+    }
+
+    return $output;
   }
 
   return '';
