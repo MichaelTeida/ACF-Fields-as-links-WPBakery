@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: ACF-Fields-as-links-WPBakery
-Description: Custom WPBakery elements for displaying ACF fields
-Version: 1.3
+Description: Custom WPBakery elements for displaying ACF PRO fields as links
+Version: 1.4
 Author: Michał Głuch
 */
 
