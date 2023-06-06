@@ -2,7 +2,7 @@
 /*
 Plugin Name: ACF-Fields-as-links-WPBakery
 Description: Custom WPBakery elements for displaying ACF PRO fields
-Version: 1.1
+Version: 1.2
 Author: Michał Głuch
 */
 
@@ -32,6 +32,12 @@ function load_custom_acf_elements() {
           'param_name' => 'prefix',
           'description' => 'Enter a prefix to be added before the field value (e.g., "https://", "tel:")',
         ),
+        array(
+          'type' => 'textfield',
+          'heading' => 'Text Size',
+          'param_name' => 'text_size',
+          'description' => 'Enter the text size for the field value (e.g., "16px", "1rem")',
+        ),
       ),
     )
   );
@@ -46,6 +52,7 @@ function render_acf_field_display_element($atts) {
       array(
         'acf_field' => '',
         'prefix' => '',
+        'text_size' => '16px',
       ),
       $atts
     )
@@ -62,9 +69,17 @@ function render_acf_field_display_element($atts) {
   if ($field_value) {
     $output = '';
     if ($prefix && $acf_field) {
-      $output = $prefix . $field_value;
+      $output = '<a href="' . $prefix . $field_value . '"';
     } else {
-      $output = $field_value;
+      $output = '<span';
+    }
+
+    $output .= ' style="font-size:' . $text_size . ';">' . $field_value;
+
+    if ($prefix && $acf_field) {
+      $output .= '</a>';
+    } else {
+      $output .= '</span>';
     }
 
     return $output;
