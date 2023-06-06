@@ -1,4 +1,4 @@
-Wtyczka zrobiona dla własnych potrzeb. Brakowało mi takiej funkcjonalnosci w WPBakery i ACF PRO.
+Prosta wtyczka zrobiona dla własnych potrzeb. Brakowało mi takiej funkcjonalnosci w WPBakery i ACF PRO.
 
 # ACF Fields as links WPBakery
 
